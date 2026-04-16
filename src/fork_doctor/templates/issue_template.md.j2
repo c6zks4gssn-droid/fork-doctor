@@ -1,0 +1,24 @@
+---
+name: {{ "Bug report" if kind == "bug" else "Feature request" }}
+about: {{ "Report a bug" if kind == "bug" else "Suggest a feature" }}
+title: "{{ "[BUG] " if kind == "bug" else "[FEATURE] " }}"
+labels: {{ "bug" if kind == "bug" else "enhancement" }}
+---
+
+{% if kind == "bug" %}
+**Describe the bug**
+
+**Steps to reproduce**
+
+**Expected behavior**
+
+**Environment**
+- OS:
+- Version:
+{% else %}
+**Problem**
+
+**Proposed solution**
+
+**Alternatives considered**
+{% endif %}

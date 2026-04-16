@@ -1,0 +1,39 @@
+{
+  "name": "Dev Container",
+{% if language == "python" %}
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -e . || pip install -r requirements.txt || true",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "charliermarsh.ruff"]
+    }
+  }
+{% elif language in ("javascript", "typescript") %}
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+{% elif language == "go" %}
+  "image": "mcr.microsoft.com/devcontainers/go:1.22",
+  "postCreateCommand": "go mod download",
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go"]
+    }
+  }
+{% elif language == "rust" %}
+  "image": "mcr.microsoft.com/devcontainers/rust:1.77",
+  "postCreateCommand": "cargo build",
+  "customizations": {
+    "vscode": {
+      "extensions": ["rust-lang.rust-analyzer"]
+    }
+  }
+{% else %}
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "echo 'Customize me'"
+{% endif %}
+}
