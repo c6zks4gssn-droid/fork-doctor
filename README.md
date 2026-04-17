@@ -9,8 +9,7 @@ Automated fork analysis and structural improvement for GitHub repositories.
 
 Fork Doctor forks a repo, analyzes what's missing (CI, security scanning, templates, etc.), and optionally creates a PR with all improvements applied.
 
-<!-- screenshot placeholder -->
-![Fork Doctor screenshot](docs/screenshot.png)
+https://github.com/user-attachments/assets/demo.mp4
 
 ## ✨ Features
 
