@@ -1,0 +1,24 @@
+# 🏥 Fork Doctor
+> Automated fork analysis and structural improvement for GitHub repositories.
+
+## What it does
+Automated fork analysis and structural improvement for GitHub repositories.
+
+## Quick start
+```
+pip install fork-doctor
+```
+
+## Key features
+- **12 health checks** — CI, CodeQL, Dependabot, pre-commit, issue/PR templates, CONTRIBUTING, release automation, devcontainers, README badges, license, benchmarks, SBOM
+- **Language-aware** — auto-detects Python, JavaScript, TypeScript, Go, Rust and generates appropriate configs
+- **Dry-run mode** — preview changes without committing
+- **Rich output** — beautiful tables, progress bars, colored terminal output
+- **One command** — fork, analyze, improve, and open a PR in seconds
+- Python 3.9+
+- `gh` CLI authenticated (`gh auth login`)
+- Git configured
+
+## Links
+- Source: https://github.com/c6zks4gssn-droid/fork-doctor
+- Brand: Bonanza Labs ✦ https://bonanza-labs.tiiny.site
