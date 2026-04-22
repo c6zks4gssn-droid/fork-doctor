@@ -9,7 +9,7 @@ description = "Automated fork analysis and structural improvement for GitHub rep
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
-authors = [{ name = "Fork Doctor Contributors" }]
+authors = [{ name = "Bonanza Labs", email = "bonanzapay@proton.me" }]
 keywords = ["github", "repository-health", "devops", "automation", "ci-cd", "security", "sbom"]
 classifiers = [
     "Development Status :: 4 - Beta",
