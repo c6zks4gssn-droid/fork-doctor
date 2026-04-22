@@ -22,6 +22,15 @@ jobs:
       - name: Build package
         run: python3 -m build
 
+      - name: Check package
+        run: twine check dist/*
+
+      - name: Publish to TestPyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: twine upload --repository testpypi dist/* --skip-existing || true
+
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__
