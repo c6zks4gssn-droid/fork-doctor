@@ -1,10 +1,10 @@
 [build-system]
 requires = ["hatchling"]
-build-backend = "hatchling.backends"
+build-backend = "hatchling.build"
 
 [project]
 name = "fork-doctor"
-version = "0.1.0"
+version = "0.2.0"
 description = "Automated fork analysis and structural improvement for GitHub repositories"
 readme = "README.md"
 license = "MIT"
@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Quality Assurance",
-    "Topic :: Software Development :: DevOps",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
     "typer>=0.9.0",
@@ -44,8 +44,8 @@ dev = [
 fork-doctor = "fork_doctor.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/fork-doctor/fork-doctor"
-Issues = "https://github.com/fork-doctor/fork-doctor/issues"
+Homepage = "https://github.com/c6zks4gssn-droid/fork-doctor"
+Issues = "https://github.com/c6zks4gssn-droid/fork-doctor/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/fork_doctor"]

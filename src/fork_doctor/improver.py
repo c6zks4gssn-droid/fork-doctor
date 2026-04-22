@@ -8,7 +8,7 @@ from fork_doctor.analyzer import CHECKS
 TEMPLATE_DIR = Path(__file__).parent / "templates"
 _env = Environment(
     loader=FileSystemLoader(str(TEMPLATE_DIR)),
-    autoescape=select_autoescape(default_for_filename=False),
+    autoescape=select_autoescape(),
 )
 
 

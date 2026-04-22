@@ -26,7 +26,7 @@ REQUIRED_TEMPLATES = [
 def env():
     return Environment(
         loader=FileSystemLoader(str(TEMPLATE_DIR)),
-        autoescape=select_autoescape(default_for_filename=False),
+        autoescape=select_autoescape(),
     )
 
 

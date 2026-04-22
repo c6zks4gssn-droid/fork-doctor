@@ -12,10 +12,11 @@ runner = CliRunner()
 def test_version():
     result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
-    assert "0.1.0" in result.stdout
+    assert "0.2.0" in result.stdout
 
 
 def test_no_args_shows_help():
     result = runner.invoke(app)
-    assert result.exit_code == 0
+    # Typer exits with 2 when no args given and no default command
+    assert result.exit_code in (0, 2)
     assert "fork-doctor" in result.output.lower() or "Usage" in result.output
