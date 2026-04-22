@@ -52,9 +52,17 @@ def _parse_repo_url(url: str) -> tuple[str, str]:
 def _gh_fork(owner: str, repo: str) -> str:
     """Fork a repo using gh CLI."""
     r = _run(f"gh repo fork {owner}/{repo} --clone=false", check=False)
-    m = re.search(r"([\w-]+/[\w-]+)", r.stdout.strip())
-    if m:
-        return m.group(1)
+    # gh repo fork outputs a full URL like https://github.com/owner/repo
+    # Extract owner/repo from the URL
+    url_match = re.search(r'https://github\.com/([^/]+/[^/\s]+)', r.stdout.strip())
+    if url_match:
+        return url_match.group(1).rstrip(']')
+    # Fallback: parse owner/repo from any format
+    matches = re.findall(r"([\w.-]+/[\w.-]+)", r.stdout.strip())
+    if matches:
+        for match in matches:
+            if repo in match:
+                return match
     u = _run("gh api user -q .login", check=True)
     return f"{u.stdout.strip()}/{repo}"
 
