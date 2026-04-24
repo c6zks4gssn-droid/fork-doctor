@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/c6zks4gssn-droid/bonanza-labs-website/main/public/bonanza-labs-logo-256.png" alt="Bonanza Labs" width="128" />
+
 # 🏥 Fork Doctor
 
 [![CI](https://github.com/fork-doctor/fork-doctor/actions/workflows/ci.yml/badge.svg)](https://github.com/fork-doctor/fork-doctor/actions)
